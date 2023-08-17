@@ -318,18 +318,51 @@
 // let k = removeElement(nums, val);
 // console.log("Output:", k, "nums:", nums.slice(0, k));
 
-var removeDuplicates = function(nums) {
-  let k = 1; 
-  for (let i = 1; i < nums.length; i++) {
-      if (nums[i] !== nums[i - 1]) {
-          nums[k] = nums[i];
-          k++;
-      }  }
-  return k;
-};
-let nums = [1, 1, 2,2,6,87,6];
-let k = removeDuplicates(nums);
-console.log("Output:", k, "nums =", nums.slice(0, k).concat(Array(nums.length - k).fill('_')));
+// var removeDuplicates = function(nums) {
+//   let k = 1; 
+//   for (let i = 1; i < nums.length; i++) {
+//       if (nums[i] !== nums[i - 1]) {
+//           nums[k] = nums[i];
+//           k++;
+//       }  }
+//   return k;
+// };
+// let nums = [1, 1, 2,2,6,87,6];
+// let k = removeDuplicates(nums);
+// console.log("Output:", k, "nums =", nums.slice(0, k).concat(Array(nums.length - k).fill('_')));
+//split Bill
+const expenses = [
+  { payer: 'A', amount: 1000, participants: ['A', 'B', 'C', 'D'] },
+  { payer: 'B', amount: 400, participants: ['A', 'B', 'C', 'D'] },
+  { payer: 'B', amount: 75, participants: ['B', 'C', 'D'] }
+];
+
+
+const personTotal = {};
+for (const expense of expenses) {
+  for (const participant of expense.participants) {
+    if (!personTotal[participant]) {
+      personTotal[participant] = 0;
+    }
+    personTotal[participant] += expense.amount / expense.participants.length;
+  }
+}
+
+
+const owes = {};
+for (const person in personTotal) {
+  for (const payer in personTotal) {
+    if (person !== payer) {
+      const amountOwed = personTotal[payer] - personTotal[person];
+      if (!owes[person]) {
+        owes[person] = [];
+      }
+      if (amountOwed > 0) {
+        owes[person].push(`${payer} $${amountOwed.toFixed(2)}`);
+      }
+    }
+  }
+}
 
 
 

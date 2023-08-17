@@ -1,0 +1,56 @@
+1.Features of REACT:
+
+   A.i.JSX
+    ii.Virtual Dom : When the state of an object changes, the virtual DOM changes only that object in the real DOM, rather than updating all the objects
+    iii.componets.
+    iv.one way data binding
+     v.High performance
+
+
+2. Why use React instead of other frameworks, like Angular?
+A: Easy creation of dynamic applications,Improves performance,re-usable components,dedicated tools for easy debugging
+3.What is the difference between the ES6 and ES5 standards?
+A: ES5 :
+   var MyComponent= React.createClass({
+    render.function(){
+        return(
+            <h3>HIII</h3>
+        )
+    }
+   })
+   ES6: 
+    class MyComponent extends React.Component {
+        render(){
+            return(
+                <h3>Hiii</h3>
+            )
+        }
+    }
+4.What is an event in React?
+A:  An event is an action that a user or system may trigger, such as pressing a key, a mouse click, etc.
+React events are named using camelCase, rather than lowercase in HTML.
+With JSX, you pass a function as the event handler, rather than a string in HTML.
+ Ex:  class Simple extends React.Component{
+    Work(){
+        alert("hiii)
+    }
+    render()
+    return(
+        <button onClick={this.work}>Button
+        </button>
+    )
+
+ }
+ 5. Explain how lists work in React?
+ A:  We create lists in React as we do in regular JavaScript. Lists display data in an ordered format
+       The traversal of lists is done using the map() function
+       const names=["A","B","c","D","E"]
+       const listOfName =()=>{
+           const listitems =names.m,ap((name)=>
+           <li key={name}>
+           {name}</li>);
+           return(
+            <ul>{listitems}</ul>
+           )
+       }
+6.
