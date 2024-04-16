@@ -748,6 +748,15 @@ rotateArrayRight(nums, k);
 console.log(nums); // Output: [5, 6, 7, 1, 2, 3, 4]
 
 
+// Splice
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.splice(2, 1, "Lemon", "Kiwi");
+// console.log(fruits);
+//Slice
+const fruits1 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+           const citrus = fruits1.slice(1, 3);
+           console.log(citrus)
 
 
 
